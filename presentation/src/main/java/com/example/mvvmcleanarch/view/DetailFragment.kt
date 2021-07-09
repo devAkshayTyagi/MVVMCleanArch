@@ -42,14 +42,6 @@ class DetailFragment : BaseFragment() {
 
         binding.ivAvatar.loadImage(context as MainActivity, repositoryItem?.avatars?.get(0))
 
-        /*binding.ivAvatar.apply {
-            transitionName = repositoryItem?.avatars?.get(0)
-            Glide.with(this)
-                .load(repositoryItem?.avatars?.get(0))
-                .apply(RequestOptions.centerCropTransform())
-                .into(this)
-        }*/
-
     }
 
     private fun receiveArguments() {

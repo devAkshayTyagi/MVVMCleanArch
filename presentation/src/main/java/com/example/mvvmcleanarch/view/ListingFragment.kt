@@ -2,7 +2,6 @@ package com.example.mvvmcleanarch.view
 
 import android.util.Log
 import android.view.View
-import android.widget.ImageView
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
@@ -58,20 +57,11 @@ class ListingFragment : BaseFragment() {
 
 
     /** Higher order function */
-    private fun onItemSelected(repositoryItem: RepositoryItem, imageView: ImageView) {
-        /*  val extras = FragmentNavigatorExtras(
-              imageView to (repositoryItem.avatars?.get(0) ?: "")
-          )*/
+    private fun onItemSelected(repositoryItem: RepositoryItem) {
 
         val bundle = bundleOf("repositoryItem" to repositoryItem)
         val navController = NavHostFragment.findNavController(this)
         navController.navigate(R.id.detailFragment, bundle)
-
-        /* navController.navigate(
-             R.id.action_listingFragment_to_detailFragment,
-             bundle, // Bundle of args
-             null, // NavOptions
-             extras)*/
     }
 
 

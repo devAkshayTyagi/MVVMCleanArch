@@ -2,7 +2,6 @@ package com.example.mvvmcleanarch.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.model.RepositoryItem
@@ -10,11 +9,11 @@ import com.example.mvvmcleanarch.R
 import com.example.mvvmcleanarch.databinding.ItemTrendingRepoBinding
 import com.example.mvvmcleanarch.extensions.loadImage
 import java.util.*
-import kotlin.reflect.KFunction2
+import kotlin.reflect.KFunction1
 
 class AdapterTrendingRepoList(
     val arrItems: ArrayList<RepositoryItem>,
-    val onItemSelected: KFunction2<RepositoryItem, ImageView, Unit>
+    val onItemSelected: KFunction1<RepositoryItem, Unit>
 ) :
     RecyclerView.Adapter<AdapterTrendingRepoList.ItemViewHolder>() {
 
@@ -24,8 +23,7 @@ class AdapterTrendingRepoList(
             itemTrendingRepoBinding.root.setOnClickListener {
                 if (absoluteAdapterPosition != -1)
                     onItemSelected(
-                        arrItems[absoluteAdapterPosition],
-                        itemTrendingRepoBinding.ivAvatar
+                        arrItems[absoluteAdapterPosition]
                     )
             }
         }
