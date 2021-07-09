@@ -1,0 +1,4 @@
+rootProject.name = "MVVM + Clean Arch"
+include ':presentation'
+include ':data'
+include ':domain'
